@@ -1,18 +1,20 @@
 import { fastify } from 'fastify';
-
 const server = fastify()
-
 server.get('/', () => {
-    return 'Olá bem vindo ao servidor'
+return 'Olá bem vindo ao servidor'
 })
-
 server.get('/alunos', () => {
-    return 'Aqui tem dados de alunos'
+return 'Aqui tem dados de alunos'
 })
-
-//GET, POST, PUT E DELETE
-server.post('/alunos');
-
+server.post('/alunos', () => {
+return 'Aqui inserimos alunos'
+})
+server.put('/alunos/:id', () => {
+return 'Aqui atualizamos alunos'
+})
+server.delete('/alunos/:id', () => {
+return 'Aqui deletamos alunos'
+})
 server.listen({
-    port: 3333
+port: 3333
 })
